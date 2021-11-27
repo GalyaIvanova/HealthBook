@@ -25,6 +25,11 @@ public class User {
     )
     private Set<Role> role;
 
+
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "username")
+//    private MedicalPractitioner gp;
+
     public String getUserName() {
         return userName;
     }

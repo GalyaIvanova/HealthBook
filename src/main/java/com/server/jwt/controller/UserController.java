@@ -20,13 +20,21 @@ public class UserController {
 
     @PostConstruct
     public void initRoleAndUser() {
-
        // userService.initRoleAndUser();
     }
 
     @PostMapping({"/registerNewUser"})
     public User registerNewUser(@RequestBody User user) {
         return userService.registerNewUser(user);
+
+        /*
+            {
+                "userName":"...",
+                "userFirstName":"...",
+                "userLastName":"...",
+                "userPassword":"..."
+            }
+         */
     }
 
 

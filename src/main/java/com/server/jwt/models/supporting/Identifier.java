@@ -1,5 +1,5 @@
 
-package com.server.jwt.entity;
+package com.server.jwt.models.supporting;
 
         import com.server.jwt.service.UserService;
 
