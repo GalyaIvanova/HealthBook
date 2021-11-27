@@ -30,6 +30,7 @@ public class MedicService {
 
     public String addRoleDoctorToExistingUser(MedicalPractitioner mp) throws SQLIntegrityConstraintViolationException {
 
+        //TODO make user_Id be unique
         if (userDao.existsById(mp.getMedicUsername().getUserName())) {
             User user = userDao.findById(mp.getMedicUsername().getUserName()).get();
             Role role = roleDao.findById(2).get();
@@ -39,15 +40,15 @@ public class MedicService {
             userRoles.add(roleSecond);
             user.setRole(userRoles);
             userDao.save(user);
+
+            mp.setMedicUsername(user);
+
         } else {
             return "User does not exist";
         }
 
         try {
-            MedicalPractitioner medic = new MedicalPractitioner();
-            medic.setMedicNumberOfPractice(mp.getMedicNumberOfPractice());
-            medic.setMedicUsername(mp.getMedicUsername());
-            docDao.save(medic);
+            docDao.save(mp);
         } catch (Exception e) {
             return "Already exist";
         }

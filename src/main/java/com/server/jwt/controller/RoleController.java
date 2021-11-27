@@ -48,10 +48,17 @@ public class RoleController {
         return medicService.addRoleDoctorToExistingUser(mp);
 
         /*
-        {
-            "medicUsername":"...",
-            "medicNumberOfPractice":"..."
-        }
+            {
+                "medicUsername":
+                {
+                    "userName":"galivanova",
+                    "userFirstName":"...",
+                    "userLastName":"...",
+                    "userPassword":"..."
+                }
+                ,
+                "medicNumberOfPractice":"nfksafhkls"
+            }
          */
     }
 
