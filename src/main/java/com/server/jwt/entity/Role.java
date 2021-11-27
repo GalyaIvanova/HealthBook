@@ -7,15 +7,15 @@ import javax.persistence.Id;
 public class Role {
 
     @Id
-    private String roleName;
+    private int roleId;
     private String roleDescription;
 
-    public String getRoleName() {
-        return roleName;
+    public int getRoleId() {
+        return roleId;
     }
 
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
+    public void setRoleId(int roleName) {
+        this.roleId = roleName;
     }
 
     public String getRoleDescription() {

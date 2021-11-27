@@ -31,21 +31,22 @@ public class UserController {
 
 
     @PostMapping({"/forAdmin"})
-    @PreAuthorize("hasRole('Admin')")
+    @PreAuthorize("hasRole(0)")
     public Role forAdmin() {
         Role role=new Role();
-        role.setRoleName("Admin");
+        role.setRoleId(0);
+        role.setRoleDescription("Admin");
         return role;
     }
 
     @GetMapping({"/forUser"})
-    @PreAuthorize("hasRole('User')")
+    @PreAuthorize("hasRole(2)")
     public String forUser() {
       return "This URL is only accessible to the user";
     }
 
     @GetMapping({"/forDoctor"})
-    @PreAuthorize("hasRole('Doctor')")
+    @PreAuthorize("hasRole(1)")
     public String forDoctor() {
         return "This URL is only accessible to the doctor";
     }

@@ -6,10 +6,9 @@ package com.server.jwt.entity;
         import javax.persistence.*;
         import java.util.Set;
 
-@Entity
+
 public class Identifier {
 
-    @Id
     private String userName;
 
     public String getUserName() {

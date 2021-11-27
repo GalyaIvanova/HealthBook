@@ -33,7 +33,7 @@ public class RoleController {
     }
 
     @PostMapping({"/editUserRoleAsDoctor"})
-    @PreAuthorize("hasRole('Admin')")
+    @PreAuthorize("hasRole(0)")
     public String addRoleToExistingUser(@RequestBody Identifier username) {
         return userService.addRoleToExistingUser(username);
     }

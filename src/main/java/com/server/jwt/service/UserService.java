@@ -29,9 +29,9 @@ public class UserService {
     private PasswordEncoder passwordEncoder;
 
     public void initRoleAndUser() {
-//
+
 //        Role adminRole = new Role();
-//        adminRole.setRoleName("Admin");
+//        adminRole.setRoleId(0);
 //        adminRole.setRoleDescription("Admin role");
 //        roleDao.save(adminRole);
 //
@@ -52,7 +52,7 @@ public class UserService {
     }
 
     public User registerNewUser(User user) {
-        Role role = roleDao.findById("User").get();
+        Role role = roleDao.findById(2).get();
         Set<Role> userRoles = new HashSet<>();
         userRoles.add(role);
         user.setRole(userRoles);
@@ -64,8 +64,8 @@ public class UserService {
 
         if( userDao.existsById(userNameId.getUserName()) ){
             User user=userDao.findById(userNameId.getUserName()).get();
-            Role role= roleDao.findById("User").get();
-            Role roleSecond = roleDao.findById("Doctor").get();
+            Role role= roleDao.findById(2).get();
+            Role roleSecond = roleDao.findById(1).get();
             Set<Role> userRoles = new HashSet<>();
             userRoles.add(role);
             userRoles.add(roleSecond);
