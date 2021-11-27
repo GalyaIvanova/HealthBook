@@ -51,10 +51,7 @@ public class RoleController {
             {
                 "medicUsername":
                 {
-                    "userName":"galivanova",
-                    "userFirstName":"...",
-                    "userLastName":"...",
-                    "userPassword":"..."
+                    "userName":"..."(, ...)
                 }
                 ,
                 "medicNumberOfPractice":"nfksafhkls"
