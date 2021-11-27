@@ -11,6 +11,9 @@ public class MedicalPractitioner {
     private String medicNumberOfPractice;
     private String medicUsername;
 
+//TODO medicUsername and userName relation
+
+
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "DOCTOR_USER",
             joinColumns = {
