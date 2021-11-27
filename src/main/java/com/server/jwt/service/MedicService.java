@@ -30,8 +30,8 @@ public class MedicService {
 
     public String addRoleDoctorToExistingUser(MedicalPractitioner mp) throws SQLIntegrityConstraintViolationException {
 
-        if (userDao.existsById(mp.getMedicUsername())) {
-            User user = userDao.findById(mp.getMedicUsername()).get();
+        if (userDao.existsById(mp.getMedicUsername().getUserName())) {
+            User user = userDao.findById(mp.getMedicUsername().getUserName()).get();
             Role role = roleDao.findById(2).get();
             Role roleSecond = roleDao.findById(1).get();
             Set<Role> userRoles = new HashSet<>();
